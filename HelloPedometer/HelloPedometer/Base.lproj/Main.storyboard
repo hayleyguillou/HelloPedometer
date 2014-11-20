@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hRw-bW-5mR">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Historical Pedometer for Custom Date Range-->
+        <scene sceneID="X03-QD-HlQ">
+            <objects>
+                <viewController id="qf7-8v-V7Q" customClass="HistoricalPedometerViewController" customModule="HelloPedometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O8d-Ge-Wz5"/>
+                        <viewControllerLayoutGuide type="bottom" id="6XP-mU-HbM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="92S-x1-OJO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfH-Hc-4KE">
+                                <rect key="frame" x="16" y="79" width="80" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="tCC-Wj-bB2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMK-fl-NcG">
+                                <rect key="frame" x="16" y="108" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sja-Br-ZP3">
+                                <rect key="frame" x="104" y="75" width="423" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dp:" destination="qf7-8v-V7Q" eventType="touchDown" id="PIl-zQ-dU2"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPo-j7-FoW">
+                                <rect key="frame" x="104" y="104" width="412" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dp:" destination="qf7-8v-V7Q" eventType="touchDown" id="XqA-Zy-XUD"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAO-Ch-vje">
+                                <rect key="frame" x="524" y="71" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="WVU-UN-JmB"/>
+                                    <constraint firstAttribute="width" constant="60" id="l8r-FO-9b0"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submit:" destination="qf7-8v-V7Q" eventType="touchDown" id="QSD-Ui-HTm"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmg-5Z-Ace">
+                                <rect key="frame" x="16" y="142" width="568" height="107"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="bg3-Ll-mIC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="rmg-5Z-Ace" firstAttribute="leading" secondItem="92S-x1-OJO" secondAttribute="leadingMargin" id="2ie-wH-B40"/>
+                            <constraint firstItem="dfH-Hc-4KE" firstAttribute="top" secondItem="O8d-Ge-Wz5" secondAttribute="bottom" constant="15" id="3GI-uJ-Q1b"/>
+                            <constraint firstItem="rmg-5Z-Ace" firstAttribute="top" secondItem="zPo-j7-FoW" secondAttribute="bottom" constant="8" id="72H-eh-ZLK"/>
+                            <constraint firstItem="dfH-Hc-4KE" firstAttribute="leading" secondItem="92S-x1-OJO" secondAttribute="leadingMargin" id="Cm6-7o-Urq"/>
+                            <constraint firstItem="zPo-j7-FoW" firstAttribute="leading" secondItem="Sja-Br-ZP3" secondAttribute="leading" id="Gx4-ah-lgl"/>
+                            <constraint firstItem="Sja-Br-ZP3" firstAttribute="trailing" secondItem="zPo-j7-FoW" secondAttribute="trailing" id="IU6-mw-QBY"/>
+                            <constraint firstItem="vMK-fl-NcG" firstAttribute="top" secondItem="dfH-Hc-4KE" secondAttribute="bottom" constant="8" symbolic="YES" id="JNS-uh-Cgs"/>
+                            <constraint firstItem="KAO-Ch-vje" firstAttribute="leading" secondItem="zPo-j7-FoW" secondAttribute="trailing" constant="8" id="NMI-Pw-NFk"/>
+                            <constraint firstItem="KAO-Ch-vje" firstAttribute="top" secondItem="O8d-Ge-Wz5" secondAttribute="bottom" constant="7" id="PSo-LS-LaR"/>
+                            <constraint firstItem="dfH-Hc-4KE" firstAttribute="leading" secondItem="vMK-fl-NcG" secondAttribute="leading" id="Pdu-DS-gBJ"/>
+                            <constraint firstItem="Sja-Br-ZP3" firstAttribute="top" secondItem="O8d-Ge-Wz5" secondAttribute="bottom" constant="11" id="Srn-st-FNH"/>
+                            <constraint firstItem="KAO-Ch-vje" firstAttribute="leading" secondItem="Sja-Br-ZP3" secondAttribute="trailing" constant="8" id="Ua1-ll-qZJ"/>
+                            <constraint firstItem="zPo-j7-FoW" firstAttribute="top" secondItem="O8d-Ge-Wz5" secondAttribute="bottom" constant="40" id="XvV-FI-D3n"/>
+                            <constraint firstItem="KAO-Ch-vje" firstAttribute="trailing" secondItem="92S-x1-OJO" secondAttribute="trailingMargin" id="hfH-CN-14Z"/>
+                            <constraint firstItem="Sja-Br-ZP3" firstAttribute="leading" secondItem="dfH-Hc-4KE" secondAttribute="trailing" constant="8" symbolic="YES" id="mDV-ws-6V8"/>
+                            <constraint firstItem="zPo-j7-FoW" firstAttribute="leading" secondItem="vMK-fl-NcG" secondAttribute="trailing" constant="8" symbolic="YES" id="meD-FS-8xm"/>
+                            <constraint firstItem="rmg-5Z-Ace" firstAttribute="trailing" secondItem="92S-x1-OJO" secondAttribute="trailingMargin" id="mkQ-tg-GW7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Historical Pedometer for Custom Date Range" id="fRG-ce-onq"/>
+                    <connections>
+                        <outlet property="endTextField" destination="zPo-j7-FoW" id="kP4-pj-GDe"/>
+                        <outlet property="outputLabel" destination="rmg-5Z-Ace" id="3g5-m2-UCh"/>
+                        <outlet property="startTextField" destination="Sja-Br-ZP3" id="Ebg-qf-Kcw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bWo-MS-t5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="475" y="517"/>
+        </scene>
+        <!--Custom Range-->
+        <scene sceneID="wva-jt-0Vr">
+            <objects>
+                <navigationController id="X6t-Rr-HGl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Custom Range" id="puu-fz-Vud"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m4C-gl-IpS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qf7-8v-V7Q" kind="relationship" relationship="rootViewController" id="syE-3c-AFN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1b8-NE-LLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-354" y="517"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="B0C-wU-HXk">
+            <objects>
+                <tabBarController id="hRw-bW-5mR" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Z9M-9i-dAU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ABi-w0-SSB" kind="relationship" relationship="viewControllers" id="A6s-vg-oZY"/>
+                        <segue destination="h8J-Pp-0L8" kind="relationship" relationship="viewControllers" id="Qgh-rE-XcT"/>
+                        <segue destination="X6t-Rr-HGl" kind="relationship" relationship="viewControllers" id="u0y-j1-3jP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0F-4h-QdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1174" y="63"/>
+        </scene>
+        <!--Live Pedometer - iPhone 5S and higher-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="LivePedometerViewController" customModule="HelloPedometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq2-Ja-8bS">
+                                <rect key="frame" x="279" y="122" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ht-j9-DaI">
+                                <rect key="frame" x="279" y="151" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4ht-j9-DaI" firstAttribute="top" secondItem="Uq2-Ja-8bS" secondAttribute="bottom" constant="8" symbolic="YES" id="10R-aJ-saL"/>
+                            <constraint firstItem="4ht-j9-DaI" firstAttribute="leading" secondItem="Uq2-Ja-8bS" secondAttribute="leading" id="EZw-i8-WbW"/>
+                            <constraint firstItem="Uq2-Ja-8bS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="58" id="F3S-Yv-FN8"/>
+                            <constraint firstItem="Uq2-Ja-8bS" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="fKV-GZ-7Fa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Live Pedometer - iPhone 5S and higher" id="QC4-3e-0aL"/>
+                    <connections>
+                        <outlet property="lastUpdatedLabel" destination="4ht-j9-DaI" id="sR6-tQ-7yP"/>
+                        <outlet property="stepCountLabel" destination="Uq2-Ja-8bS" id="fiQ-r8-CyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="475" y="-992"/>
+        </scene>
+        <!--Live Pedometer-->
+        <scene sceneID="qhN-bg-80b">
+            <objects>
+                <navigationController id="ABi-w0-SSB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Live Pedometer" id="grd-bY-SBx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pVV-Zk-g9k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="CFU-rS-YhY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xM5-py-ZtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345" y="-992"/>
+        </scene>
+        <!--Weekly Pedometer Updates-->
+        <scene sceneID="vUU-Xh-prO">
+            <objects>
+                <tableViewController id="8UJ-3l-Qci" customClass="WeeklyPedometerViewController" customModule="HelloPedometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="22" sectionFooterHeight="22" id="YP1-uo-bLk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="yYN-da-bzJ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" tableViewCell="yYN-da-bzJ" id="T1h-GB-HcO">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8UJ-3l-Qci" id="Uet-UB-mOc"/>
+                            <outlet property="delegate" destination="8UJ-3l-Qci" id="Icn-GE-4hc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Weekly Pedometer Updates" id="mKy-eW-7bw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8em-II-LHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="475" y="-243"/>
+        </scene>
+        <!--Weekly Pedometer-->
+        <scene sceneID="7yK-gc-HF2">
+            <objects>
+                <navigationController id="h8J-Pp-0L8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weekly Pedometer" id="75L-5R-NlT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6bK-4Z-do1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8UJ-3l-Qci" kind="relationship" relationship="rootViewController" id="U4Q-wO-DNH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYo-Sz-aMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345" y="-243"/>
+        </scene>
+    </scenes>
+</document>
